@@ -1,0 +1,156 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    height: auto; /* Adjusts to content */
+    background: white;
+    width: 60%;
+    margin: 30px auto; /* Centering */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents content overflow */
+}
+
+/* Left Section: Image */
+.card-image {
+    position: relative;
+    width: 50%;
+    overflow: hidden; /* Prevents image overflow */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card-t{
+    margin-left: 10px;
+}
+
+/* Category Badge */
+.category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #F36F8F;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+/* Right Section: Content */
+.card-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: #fff;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #3bcf93;
+    /* margin-bottom: 10px; */
+}
+
+/* Card Description */
+.card-description {
+    font-size: 16px;
+    color: #555;
+    padding: 10px 0;
+    line-height: 1.5;
+}
+
+/* Progress Bar */
+.card-progress {
+    position: relative;
+    background: #eee;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.progress-label {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Funding Info */
+.card-funding {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    color: #232323;
+    margin-top: 10px;
+}
+
+/* Wrapper for Donate Button */
+.card-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+/* Donate Button */
+.donate-button {
+    background: #3bcf93;
+    width: 100%;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligns text and icon */
+    gap: 10px; /* Adds spacing between icon and text */
+    transition: background 0.3s ease-in-out;
+}
+
+.donate-button:hover {
+    background: #ffffff; 
+    color: #3bcf93;
+    border: 2px solid #3bcf93;
+    /* Darker shade of green */
+}
+
+/* FontAwesome Heart Icon */
+.donate-button i {
+    font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /* Stacks vertically on small screens */
+        width: 90%; /* Adjusts width for small screens */
+    }
+    
+    .card-image,
+    .card-content {
+        width: 100%;
+    }
+}

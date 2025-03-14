@@ -1,0 +1,64 @@
+
+
+.navbar {
+    display: flex;
+    padding: 10px;
+ 
+    width: 100%;
+    background-color: aliceblue;
+  
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 10px 50px; Adjust padding for better spacing */
+    /* background: transparent; 
+    box-shadow: none;
+    z-index: 100; */
+  }
+  .nav-sec1 ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Increases spacing between menu items */
+    padding: 0; /* Ensures no extra padding inside */
+  }
+  
+  .nav-sec1 ul li {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #DAA428;
+    transition: 0.3s;
+    padding: 8px 12px; /* Adjust padding inside each item */
+  }
+  
+  .nav-sec1 ul li:hover {
+    color: black;
+    background: rgba(255, 255, 255, 0.2); /* Optional hover effect */
+    border-radius: 5px;
+  }
+  
+  /* Donate Button */
+  .nav-sec2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 5px;
+    background: #DAA428;
+    padding: 12px 24px; /* Adjust padding inside */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+  }
+  
+  /* Hover Effects */
+  .nav-sec2:hover {
+    background: black;
+    transform: scale(1.05);
+  }
+  
+  .nav-sec2:hover i {
+    color: #DAA428;
+  }
+  

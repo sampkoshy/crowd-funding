@@ -1,0 +1,104 @@
+/* AdminHome.css */
+
+/* ✅ Main Container */
+.admin-home-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* ✅ Admin Header */
+  .ad-head h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* ✅ Admin Navigation Link */
+  .adm {
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  
+  .adm a {
+    text-decoration: none;
+    color: #fff;
+    background: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .adm a:hover {
+    background: #0056b3;
+  }
+  
+  /* ✅ Button Styling */
+  button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #218838;
+  }
+  
+  /* ✅ Campaign List */
+  .campaign-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* ✅ Individual Campaign Item */
+  .campaign-item {
+    width: 300px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .campaign-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .campaign-item h3 {
+    font-size: 20px;
+    color: #222;
+    margin: 10px 0;
+  }
+  
+  .campaign-item p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* ✅ Section Title */
+  .ad-camp {
+    font-size: 24px;
+    color: #444;
+    margin: 20px 0;
+    font-weight: bold;
+  }
+  
