@@ -23,7 +23,7 @@
 
 //   const fetchCampaigns = async () => {
 //     try {
-//       const response = await fetch("http://localhost:3000/api/campaigns/all");
+//       const response = await fetch("http://localhost:4000/api/campaigns/all");
 
 //       if (!response.ok) {
 //         throw new Error(`HTTP Error! Status: ${response.status}`); // ✅ More specific error
@@ -39,7 +39,7 @@
 //   // ✅ Function to add a campaign and update the list
 //   const addCampaign = async (newCampaign) => {
 //     try {
-//       const response = await fetch("http://localhost:3000/api/campaigns/create", {
+//       const response = await fetch("http://localhost:4000/api/campaigns/create", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify(newCampaign),
@@ -91,105 +91,388 @@
 
 
 
- //time (5.40) admin ill 
- import React, { useEffect, useState } from "react";
- import { Link, useNavigate } from "react-router-dom";
- import Cards from "../components/Cards";
- import "./adminhome.css";
- import AdminCreateCampaign from "./AdminCreateCampain";
+//  //time (5.40) admin ill 
+//  import React, { useEffect, useState } from "react";
+//  import { Link, useNavigate } from "react-router-dom";
+//  import Cards from "../components/Cards";
+//  import "./adminhome.css";
+//  import AdminCreateCampaign from "./AdminCreateCampain";
  
- const AdminHome = () => {
-   const navigate = useNavigate();
-   const [showCreateForm, setShowCreateForm] = useState(false);
-   const [campaigns, setCampaigns] = useState([]); // ✅ Store campaigns from backend
+//  const AdminHome = () => {
+//    const navigate = useNavigate();
+//    const [showCreateForm, setShowCreateForm] = useState(false);
+//    const [campaigns, setCampaigns] = useState([]);
  
-   useEffect(() => {
-     const userRole = localStorage.getItem("userRole");
+//    useEffect(() => {
+//      const userRole = localStorage.getItem("userRole");
  
-     // ✅ Redirect non-admin users
-     if (userRole !== "admin") {
-       navigate("/login");
-     }
+//      if (userRole !== "admin") {
+//        navigate("/login");
+//      }
  
-     // ✅ Fetch campaigns from backend
-     fetchCampaigns();
-   }, [navigate]);
+//      fetchCampaigns();
+//    }, [navigate]);
  
-   const fetchCampaigns = async () => {
-     try {
-       const response = await fetch("http://localhost:3000/api/campaigns/all");
+//    const fetchCampaigns = async () => {
+//      try {
+//        const response = await fetch("http://localhost:4000/api/campaigns/all");
  
-       if (!response.ok) {
-         throw new Error(`HTTP Error! Status: ${response.status}`);
-       }
+//        if (!response.ok) {
+//          throw new Error(`HTTP Error! Status: ${response.status}`);
+//        }
  
-       const data = await response.json();
-       console.log("✅ Fetched Campaigns:", data); // ✅ Debugging output
-       setCampaigns(data);
-     } catch (error) {
-       console.error("❌ Error fetching campaigns:", error);
-     }
-   };
+//        const data = await response.json();
+//        setCampaigns(data);
+//      } catch (error) {
+//        console.error("❌ Error fetching campaigns:", error);
+//      }
+//    };
  
-   // ✅ Function to add a campaign and update the list
-   const addCampaign = async (newCampaign) => {
-     try {
-       const response = await fetch("http://localhost:3000/api/campaigns/create", {
-         method: "POST",
-         headers: { "Content-Type": "application/json" },
-         body: JSON.stringify(newCampaign),
-       });
+//    return (
+//      <div className="admin-home-container">
+//        <div className="adm">
+//          <Link to="/Login">
+//            <span>Login</span>
+//          </Link>
+//        </div>
  
-       if (!response.ok) {
-         throw new Error(`HTTP Error! Status: ${response.status}`);
-       }
+//        <div className="ad-head">
+//          <h2>Welcome, Admin!</h2>
+//        </div>
+//        <p>Manage and create fundraising campaigns.</p>
  
-       const savedCampaign = await response.json();
-       console.log("✅ Campaign Created:", savedCampaign);
+//        <button onClick={() => setShowCreateForm(!showCreateForm)}>
+//          {showCreateForm ? "Close Form" : "Create a Campaign"}
+//        </button>
  
-       // ✅ Update state with new campaign
-       setCampaigns([...campaigns, savedCampaign.newCampaign]); 
-       setShowCreateForm(false);
-     } catch (error) {
-       console.error("❌ Error creating campaign:", error);
-     }
-   };
+//        {showCreateForm && <AdminCreateCampaign />}
  
-   return (
-     <div className="admin-home-container">
-       {/* ✅ Login Redirect Link */}
-       <div className="adm">
-         <Link to="/Login">
-           <span>Login</span>
-         </Link>
-       </div>
+//        <h2 className="ad-camp">Ongoing Campaigns</h2>
  
-       {/* ✅ Admin Header */}
-       <div className="ad-head">
-         <h2>Welcome, Admin!</h2>
-       </div>
-       <p>Manage and create fundraising campaigns.</p>
+//        {campaigns.length > 0 ? <Cards campaigns={campaigns} /> : <p>No campaigns found.</p>}
+//      </div>
+//    );
+//  };
  
-       {/* ✅ Toggle Campaign Creation Form */}
-       <button onClick={() => setShowCreateForm(!showCreateForm)}>
-         {showCreateForm ? "Close Form" : "Create a Campaign"}
-       </button>
+//  export default AdminHome;
  
-       {/* ✅ Show the Campaign Form */}
-       {showCreateForm && <AdminCreateCampaign addCampaign={addCampaign} />}
- 
-       {/* ✅ Ongoing Campaigns Section */}
-       <h2 className="ad-camp">Ongoing Campaigns</h2>
- 
-       {/* ✅ Display Campaigns in Cards Component */}
-       {campaigns.length > 0 ? (
-         <Cards campaigns={campaigns} />
-       ) : (
-         <p>No campaigns found.</p>
-       )}
-     </div>
-   );
- };
- 
- export default AdminHome;
- 
+
+
+// time 5 30
+
+
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Cards from "../components/Cards";
+import "./adminhome.css";
+import AdminCreateCampaign from "./AdminCreateCampain";
+
+const AdminHome = () => {
+  const navigate = useNavigate();
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [campaigns, setCampaigns] = useState([]);
+  const [contactMessages, setContactMessages] = useState([]); // ✅ Contact messages state
+  const [opencampaign, setOpenCampaign] = useState(false); // ✅ Fixed naming
+
+  useEffect(() => {
+    const userRole = localStorage.getItem("userRole");
+
+    if (userRole !== "admin") {
+      navigate("/login");
+    }
+
+    fetchCampaigns();
+    fetchContactMessages(); // ✅ Fetch contact messages
+  }, [navigate]);
+
+  const fetchCampaigns = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/campaigns/all");
+
+      if (!response.ok) {
+        throw new Error(`HTTP Error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setCampaigns(data);
+    } catch (error) {
+      console.error("❌ Error fetching campaigns:", error);
+    }
+  };
+
+  // ✅ Fetch contact messages from backend
+  const fetchContactMessages = async () => {
+    try {
+      const response = await fetch("http://localhost:4000/api/contact/messages");
+      if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+      const data = await response.json();
+      setContactMessages(data);
+    } catch (error) {
+      console.error("❌ Error fetching contact messages:", error);
+    }
+  };
+
+  return (
+    <div className="admin-home-container">
+      <div className="adm">
+        <Link to="/Login">
+          <span>Login</span>
+        </Link>
+        <Link to="/Home">
+          <span>Home</span>
+        </Link>
+      </div>
+
+      <div className="ad-head">
+        <h2>Welcome, Admin!</h2>
+      </div>
+      <p>Manage campaigns and view contact messages.</p>
+
+      <button onClick={() => setShowCreateForm(!showCreateForm)}>
+        {showCreateForm ? "Close Form" : "Create a Campaign"}
+      </button>
+
+      {/* ✅ Fixed the button syntax */}
+      <button onClick={() => setOpenCampaign(!opencampaign)}>
+        {opencampaign ? "Hide Ongoing Campaigns" : "Show Ongoing Campaigns"}
+      </button>
+
+      {showCreateForm && <AdminCreateCampaign />}
+
+      {/* ✅ Show ongoing campaigns if opencampaign is true */}
+      {opencampaign && (
+        <>
+          <h2 className="ad-camp">Ongoing Campaigns</h2>
+          {campaigns.length > 0 ? <Cards campaigns={campaigns} /> : <p>No campaigns found.</p>}
+          <button>delete</button>
+          
+        </>
+      )}
+
+      {/* ✅ Contact Messages Section */}
+      <h2 className="ad-camp">Contact Messages</h2>
+      <div className="contact-messages">
+        {contactMessages.length > 0 ? (
+          contactMessages.map((msg) => (
+            <div key={msg._id} className="message-card">
+              <h3>Name: {msg.name}</h3>
+              <p>Email: {msg.email}</p>
+              <p>Phone: {msg.phone}</p>
+              <p>Message: {msg.message}</p>
+            </div>
+          ))
+        ) : (
+          <p>No contact messages found.</p>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default AdminHome;
+
+
+// // delete button added /edit /
+// import React, { useEffect, useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import Cards from "../components/Cards";
+// import "./adminhome.css";
+// import AdminCreateCampaign from "./AdminCreateCampain";
+
+// const AdminHome = () => {
+//   const navigate = useNavigate();
+//   const [showCreateForm, setShowCreateForm] = useState(false);
+//   const [campaigns, setCampaigns] = useState([]);
+//   const [contactMessages, setContactMessages] = useState([]);
+//   const [opencampaign, setOpenCampaign] = useState(false);
+//   const [editCampaign, setEditCampaign] = useState(null);
+
+//   useEffect(() => {
+//     const userRole = localStorage.getItem("userRole");
+
+//     if (userRole !== "admin") {
+//       navigate("/login");
+//     }
+
+//     fetchCampaigns();
+//     fetchContactMessages();
+//   }, [navigate]);
+
+//   const fetchCampaigns = async () => {
+//     try {
+//       const response = await fetch("http://localhost:4000/api/campaigns/all");
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP Error! Status: ${response.status}`);
+//       }
+
+//       const data = await response.json();
+//       setCampaigns(data);
+//     } catch (error) {
+//       console.error("❌ Error fetching campaigns:", error);
+//     }
+//   };
+
+//   const fetchContactMessages = async () => {
+//     try {
+//       const response = await fetch("http://localhost:4000/api/contact/messages");
+//       if (!response.ok) throw new Error(`HTTP Error! Status: ${response.status}`);
+//       const data = await response.json();
+//       setContactMessages(data);
+//     } catch (error) {
+//       console.error("❌ Error fetching contact messages:", error);
+//     }
+//   };
+
+//   // ✅ Function to delete a campaign
+//   const handleDeleteCampaign = async (campaignId) => {
+//     const confirmDelete = window.confirm("Are you sure you want to delete this campaign?");
+//     if (!confirmDelete) return;
+
+//     try {
+//       const response = await fetch(`http://localhost:4000/api/campaigns/${campaignId}`, {
+//         method: "DELETE",
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP Error! Status: ${response.status}`);
+//       }
+
+//       // ✅ Update the UI by removing the deleted campaign
+//       setCampaigns(campaigns.filter((campaign) => campaign._id !== campaignId));
+//       alert("Campaign deleted successfully!");
+//     } catch (error) {
+//       console.error("❌ Error deleting campaign:", error);
+//       alert("Failed to delete campaign.");
+//     }
+//   };
+
+//   // ✅ Function to edit a campaign
+//   const handleEditCampaign = (campaign) => {
+//     setEditCampaign(campaign);
+//   };
+
+//   // ✅ Function to update campaign
+//   const handleUpdateCampaign = async (event) => {
+//     event.preventDefault();
+
+//     try {
+//       const response = await fetch(`http://localhost:4000/api/campaigns/${editCampaign._id}`, {
+//         method: "PUT",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(editCampaign),
+//       });
+
+//       if (!response.ok) {
+//         throw new Error(`HTTP Error! Status: ${response.status}`);
+//       }
+
+//       alert("Campaign updated successfully!");
+
+//       // ✅ Refresh campaign list
+//       fetchCampaigns();
+//       setEditCampaign(null);
+//     } catch (error) {
+//       console.error("❌ Error updating campaign:", error);
+//       alert("Failed to update campaign.");
+//     }
+//   };
+
+//   return (
+//     <div className="admin-home-container">
+//       <div className="adm">
+//         <Link to="/Login">
+//           <span>Login</span>
+//         </Link>
+//         <Link to="/Home">
+//           <span>Home</span>
+//         </Link>
+//       </div>
+
+//       <div className="ad-head">
+//         <h2>Welcome, Admin!</h2>
+//       </div>
+//       <p>Manage campaigns and view contact messages.</p>
+
+//       <button onClick={() => setShowCreateForm(!showCreateForm)}>
+//         {showCreateForm ? "Close Form" : "Create a Campaign"}
+//       </button>
+
+//       <button onClick={() => setOpenCampaign(!opencampaign)}>
+//         {opencampaign ? "Hide Ongoing Campaigns" : "Show Ongoing Campaigns"}
+//       </button>
+
+//       {showCreateForm && <AdminCreateCampaign />}
+
+//       {/* ✅ Show ongoing campaigns if opencampaign is true */}
+//       {opencampaign && (
+//         <>
+//           <h2 className="ad-camp">Ongoing Campaigns</h2>
+//           <div className="campaign-list">
+//             {campaigns.length > 0 ? (
+//               campaigns.map((campaign) => (
+//                 <div key={campaign._id} className="campaign-card">
+//                   <Cards campaigns={[campaign]} />
+//                   <button className="delete-btn" onClick={() => handleDeleteCampaign(campaign._id)}>
+//                     Delete
+//                   </button>
+//                   <button className="edit-btn" onClick={() => handleEditCampaign(campaign)}>
+//                     Edit
+//                   </button>
+//                 </div>
+//               ))
+//             ) : (
+//               <p>No campaigns found.</p>
+//             )}
+//           </div>
+//         </>
+//       )}
+
+//       {/* ✅ Edit Campaign Form */}
+//       {editCampaign && (
+//         <div className="edit-form">
+//           <h2>Edit Campaign</h2>
+//           <form onSubmit={handleUpdateCampaign}>
+//             <label>Title:</label>
+//             <input
+//               type="text"
+//               value={editCampaign.title}
+//               onChange={(e) => setEditCampaign({ ...editCampaign, title: e.target.value })}
+//               required
+//             />
+
+//             <label>Description:</label>
+//             <textarea
+//               value={editCampaign.description}
+//               onChange={(e) => setEditCampaign({ ...editCampaign, description: e.target.value })}
+//               required
+//             />
+
+//             <button type="submit">Update</button>
+//             <button type="button" onClick={() => setEditCampaign(null)}>
+//               Cancel
+//             </button>
+//           </form>
+//         </div>
+//       )}
+
+//       <h2 className="ad-camp">Contact Messages</h2>
+//       <div className="contact-messages">
+//         {contactMessages.length > 0 ? (
+//           contactMessages.map((msg) => (
+//             <div key={msg._id} className="message-card">
+//               <h3>Name: {msg.name}</h3>
+//               <p>Email: {msg.email}</p>
+//               <p>Phone: {msg.phone}</p>
+//               <p>Message: {msg.message}</p>
+//             </div>
+//           ))
+//         ) : (
+//           <p>No contact messages found.</p>
+//         )}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default AdminHome;

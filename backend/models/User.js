@@ -14,12 +14,32 @@
 
 // time 11.20
 
+// const mongoose = require("mongoose");
+// const UserSchema= new mongoose.Schema({
+//   username: { type: String, required: true, unique: true },
+//   email: { type: String, required: true, unique: true },
+//   password: { type: String, required: true },
+//   selectedCampaign: { type: mongoose.Schema.Types.ObjectId, ref: "Campaign" }, // ✅ Reference to Campaign model
+//   donations: [
+//     {
+//       campaignId: { type: mongoose.Schema.Types.ObjectId, ref: "Campaign" },
+//       amount: { type: Number, required: true },
+//     },
+//   ],
+// });
+// module.exports = mongoose.model("User", UserSchema);
+
+
+// 1 30
+
+
 const mongoose = require("mongoose");
-const UserSchema= new mongoose.Schema({
+
+const UserSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  selectedCampaign: { type: mongoose.Schema.Types.ObjectId, ref: "Campaign" }, // ✅ Reference to Campaign model
+  selectedCampaign: { type: mongoose.Schema.Types.ObjectId, ref: "Campaign" },
   donations: [
     {
       campaignId: { type: mongoose.Schema.Types.ObjectId, ref: "Campaign" },
@@ -27,4 +47,5 @@ const UserSchema= new mongoose.Schema({
     },
   ],
 });
+
 module.exports = mongoose.model("User", UserSchema);

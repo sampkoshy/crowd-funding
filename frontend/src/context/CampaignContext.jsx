@@ -10,7 +10,7 @@ export const CampaignProvider = ({ children }) => {
     // ✅ Fetch selected campaign from the backend when user logs in
     useEffect(() => {
         if (userId) {
-            axios.get(`http://localhost:3000/api/campaigns/selected-campaign/${userId}`)
+            axios.get(`http://localhost:4000/api/campaigns/selected-campaign/${userId}`)
                 .then(res => setSelectedCampaign(res.data.selectedCampaign))
                 .catch(err => console.error("Error fetching selected campaign:", err));
         }

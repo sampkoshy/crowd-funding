@@ -193,7 +193,8 @@ router.post("/admin/login", async (req, res) => {
 // ✅ User Login Route
 router.post("/login", async (req, res) => {
     try {
-        const { email, password } = req.body;
+       
+        const { email, password, campaignId } = req.body;
         const user = await Register.findOne({ email });
         if (!user) {
             return res.status(404).json({ message: "User not found" });
@@ -207,7 +208,7 @@ router.post("/login", async (req, res) => {
             return res.status(500).json({ message: "Server error: Missing JWT_SECRET" });
         }
         const token = jwt.sign({ userId: user._id, email: user.email }, JWT_SECRET, { expiresIn: "1h" });
-        res.status(200).json({ message: "Login successful", token, user });
+        res.status(200).json({ message: "Login successful", token, user,campaignId });
     } catch (error) {
         console.error("❌ Error logging in:", error);
         res.status(500).json({ message: "Internal server error", error: error.message });

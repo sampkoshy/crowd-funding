@@ -38,7 +38,7 @@
 //     try {
 //       console.log("Sending data to server:", { name, email, phone, aadhar, password });
   
-//       const response = await axios.post("http://localhost:3000/api/register/register", {
+//       const response = await axios.post("http://localhost:4000/api/register/register", {
 //         name, email, phone, aadhar, password
 //       }, {
 //         headers: { "Content-Type": "application/json" },
@@ -113,7 +113,7 @@ const Register = () => {
     try {
       console.log("Sending data to server:", { name, email, phone, aadhar, password });
 
-      const response = await axios.post("http://localhost:3000/api/register/register", {
+      const response = await axios.post("http://localhost:4000/api/register/register", {
         name, email, phone, aadhar, password
       });
 

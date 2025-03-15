@@ -21,6 +21,11 @@
   
   /* ✅ Admin Navigation Link */
   .adm {
+    display: flex;
+  
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
     text-align: right;
     margin-bottom: 15px;
   }
@@ -100,5 +105,24 @@
     color: #444;
     margin: 20px 0;
     font-weight: bold;
+  }
+  .contact-messages {
+    margin-top: 20px;
+  }
+  
+  .message-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 5px solid #007bff;
+  }
+  .message-card h3 {
+    margin: 0;
+    color: #333;
+  }
+  .message-card p {
+    margin: 5px 0;
+    color: #666;
   }
   

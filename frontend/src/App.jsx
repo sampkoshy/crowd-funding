@@ -30,6 +30,7 @@ const App = () => {
         <Route path='/Login' element={<Login />} />
         <Route path='/Register' element={<Register />} />
         <Route path='/AdminHome' element={<AdminHome />} /> 
+        <Route path='Home'element={<Home/>}/>
         <Route path='/AdminCreateCampain' element={<AdminCreateCampaign />} />
       </Routes>
     </div>

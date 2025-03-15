@@ -155,7 +155,7 @@
 //     setLoading(true);
 
 //     try {
-//       const response = await fetch("http://localhost:3000/api/donations/donate", {
+//       const response = await fetch("http://localhost:4000/api/donations/donate", {
 //         method: "POST",
 //         headers: { "Content-Type": "application/json" },
 //         body: JSON.stringify({
@@ -273,8 +273,11 @@
 // };
 
 // export default Donate;
+
+
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./donate.css";
 
 const Donate = () => {
   const location = useLocation();
@@ -291,7 +294,15 @@ const Donate = () => {
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
-    const selectedCampaign = location.state?.campaign || JSON.parse(localStorage.getItem("selectedCampaign"));
+    let selectedCampaign = location.state?.campaign;
+    
+    if (!selectedCampaign) {
+      selectedCampaign = JSON.parse(localStorage.getItem("selectedCampaign"));
+    }
+
+    // ✅ Debugging: Log the retrieved campaign data
+    console.log("🎯 Selected Campaign:", selectedCampaign);
+
     if (selectedCampaign) {
       setCampaign(selectedCampaign);
     } else {
@@ -310,23 +321,24 @@ const Donate = () => {
     if (!/^\d{3}$/.test(cvv)) newErrors.cvv = "CVV must be exactly 3 digits.";
 
     setErrors(newErrors);
+
+    console.log("✅ Validation Errors:", newErrors);
     return Object.keys(newErrors).length === 0;
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Check if all fields are filled
     if (!amount || !cardNumber || !expiryMonth || !expiryYear || !cvv) {
       alert("All fields are required.");
       return;
     }
   
-    // Validate inputs
     if (!validateInputs()) return;
   
     setLoading(true);
     try {
       const payload = {
+        userId: localStorage.getItem("userId"), // ✅ Include userId
         campaignId: campaign._id,
         amount,
         cardNumber,
@@ -335,16 +347,16 @@ const Donate = () => {
         cvv,
       };
   
-      console.log("Request Payload:", payload); // Debugging
+      console.log("📌 Sending Payload:", payload);
   
-      const response = await fetch("http://localhost:3000/api/donations/donate", {
+      const response = await fetch("http://localhost:4000/api/donations/donate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
   
       const data = await response.json();
-      console.log("Backend Response:", data); // Debugging
+      console.log("📬 Backend Response:", data);
   
       if (response.ok) {
         alert(`✅ Payment of $${amount} successful for ${campaign.title}`);
@@ -354,24 +366,29 @@ const Donate = () => {
         alert(`❌ Donation failed: ${data.message}`);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("🚨 Error:", error);
       alert("❌ An error occurred. Please try again.");
     } finally {
       setLoading(false);
     }
   };
+  
 
   if (!campaign) return <h2>Campaign details not found!</h2>;
 
   return (
     <div className="donate-container1">
-      <h2>Donate to {campaign.title}</h2>
-
       <div className="campaign-card">
-        <img src={campaign.image} alt={campaign.title} />
+        <img src={campaign.image} alt={campaign.title} className="camp-img" />
         <h3>{campaign.title}</h3>
-        <p>{campaign.description}</p>
-        <p><strong>Goal:</strong> ${campaign.goal}</p>
+        <div className="camp-des">
+          <span>Description</span>
+          <p>{campaign.description}</p>
+        </div>
+        <div className="camp-fund">
+          <p><strong>Goal:</strong> ${campaign.goal}</p>
+          <p><strong>Raised:</strong> ${campaign.raised}</p>
+        </div>
       </div>
 
       <form className="donate-form" onSubmit={handleSubmit}>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { useNavigate } from "react-router-dom";
+
 import "./cards.css";
 
 const Cards = ({ campaigns }) => {
@@ -20,36 +21,16 @@ const Cards = ({ campaigns }) => {
     }
   }, []);
 
-  // // ✅ Handle Donate Button Click
-  // const handleDonate = (campaign) => {
-  //   if (!user) {
-  //     alert("Please log in to donate.");
-  //     navigate("/Login");
-  //     return;
-  //   }
-
-  //   // ✅ Save selected campaign in localStorage
-  //   localStorage.setItem("selectedCampaign", JSON.stringify(campaign));
-
-  //   // ✅ Update state for immediate UI change
-  //   setSelectedCampaign(campaign);
-
-  //   console.log("✅ Selected Campaign Stored:", campaign);
-
-  //   // ✅ Redirect to UserHome
-  //   navigate("/UserHome");
-  // };
-
   //time (6.00)
   const handleDonate = async (campaign) => {
     if (!user) {
       alert("Please log in to donate.");
-      navigate("/Login");
+      navigate(`/Login?id=${campaign._id}`);
       return;
     }
   
     try {
-      const response = await fetch(`http://localhost:3000/api/users/select-campaign`, {
+      const response = await fetch(`http://localhost:4000/api/users/select-campaign`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -110,7 +91,8 @@ const Cards = ({ campaigns }) => {
               {/* ✅ Donate / Pay Button Logic */}
               <div className="card-button">
                 <button className="donate-button" onClick={() => handleDonate(campaign)}>
-                  <span>{isSelected ? "Pay" : "Donate"}</span>
+                  <span>{isSelected && "Donate"}</span>
+                  
                   <i className="fa-regular fa-heart"></i>
                 </button>
               </div>
@@ -122,7 +104,7 @@ const Cards = ({ campaigns }) => {
   );
 };
 
-export default Cards;
+export default Cards;   
 // import React from "react";
 // import ProgressBar from "react-bootstrap/ProgressBar";
 // import { useNavigate } from "react-router-dom";
@@ -146,7 +128,7 @@ export default Cards;
 
 //     try {
 //       // ✅ Save Selected Campaign in Database
-//       await axios.post("http://localhost:3000/api/campaigns/select-campaign", { userId, campaignId: campaign._id });
+//       await axios.post("http://localhost:4000/api/campaigns/select-campaign", { userId, campaignId: campaign._id });
 
 //       // ✅ Update Context
 //       setSelectedCampaign(campaign);

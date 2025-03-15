@@ -11,7 +11,7 @@
 
 //   const fetchCampaigns = async () => {
 //     try {
-//       const response = await fetch("http://localhost:3000/api/campaigns/all"); // ✅ Correct endpoint
+//       const response = await fetch("http://localhost:4000/api/campaigns/all"); // ✅ Correct endpoint
 //       const data = await response.json();
 //       if (Array.isArray(data)) {
 //         setCampaigns(data);
@@ -48,7 +48,7 @@ const Home = () => {
   // ✅ Function to fetch all campaigns
   const fetchCampaigns = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/campaigns/all"); // ✅ Correct API call
+      const response = await axios.get("http://localhost:4000/api/campaigns/all"); // ✅ Correct API call
       console.log("Campaigns fetched:", response.data);
       setCampaigns(response.data); // ✅ Save campaigns to state
     } catch (error) {

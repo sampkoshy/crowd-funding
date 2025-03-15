@@ -48,24 +48,30 @@ const mongoose = require('mongoose');
 
 const campaignRoutes = require('./routes/campaignRoutes');
 const userRoutes = require("./routes/userRoutes"); // ✅ Import userRoutes
-
+const contactRoutes = require("./routes/contactRoutes");
 const registerRoutes = require('./routes/registerRoutes');
 const donationRoutes = require('./routes/donationRoutes'); // ✅ Import donation routes
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // ✅ Middleware
 app.use(express.json());  
 app.use(cors());
 
 // ✅ Routes
-app.use("/api/users", userRoutes);
+app.post("/api/users/selectCampaign", (req, res) => {
+    console.log("Received request body:", req.body); // ✅ Log request body
+    res.send("Received request"); // ✅ Temporary response
+  });
 
+
+app.use("/api/users", userRoutes);
+app.use("/api/contact", contactRoutes);
 app.use("/api/campaigns", campaignRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/register", registerRoutes);
-app.use("/api/donations", donationRoutes); // ✅ Add donation API
+app.use("/api/donations", donationRoutes);
 
 // ✅ MongoDB Connection
 mongoose.connect('mongodb://localhost:27017/campaignDB')

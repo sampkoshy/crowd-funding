@@ -19,7 +19,7 @@
 
 //       if (email === "admin@gmail.com" && password === "admin") {
 //         // ✅ Admin Login
-//         response = await axios.post("http://localhost:3000/api/register/admin/login", { email, password });
+//         response = await axios.post("http://localhost:4000/api/register/admin/login", { email, password });
 
 //         localStorage.setItem("token", response.data.token);
 //         localStorage.setItem("userRole", "admin");
@@ -29,7 +29,7 @@
 
 //       } else {
 //         // ✅ User Login
-//         response = await axios.post("http://localhost:3000/api/register/login", { email, password });
+//         response = await axios.post("http://localhost:4000/api/register/login", { email, password });
 
 //         localStorage.setItem("token", response.data.token);
 //         localStorage.setItem("userRole", "user");
@@ -99,7 +99,7 @@
 //       let response;
 
 //       if (email === "admin@gmail.com" && password === "admin") {
-//         response = await axios.post("http://localhost:3000/api/register/admin/login", { email, password });
+//         response = await axios.post("http://localhost:4000/api/register/admin/login", { email, password });
 
 //         localStorage.setItem("token", response.data.token);
 //         localStorage.setItem("userRole", "admin");
@@ -109,7 +109,7 @@
 //         navigate("/AdminHome");
 
 //       } else {
-//         response = await axios.post("http://localhost:3000/api/register/login", { email, password });
+//         response = await axios.post("http://localhost:4000/api/register/login", { email, password });
 
 //         localStorage.setItem("token", response.data.token);
 //         localStorage.setItem("userRole", "user");
@@ -178,13 +178,22 @@
 
 
 // to store name in userhome 12 30
+ 
+// amal bro set akki code
+
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+
+
 import axios from "axios";
 import "./login.css";
 
 const Login = () => {
+  const [searchParams] = useSearchParams();
+  const campaignId = searchParams.get('id');
+  console.log(campaignId)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -200,7 +209,7 @@ const Login = () => {
 
       if (email === "admin@gmail.com" && password === "admin") {
         // ✅ Admin Login API Call
-        response = await axios.post("http://localhost:3000/api/register/admin/login", { email, password });
+        response = await axios.post("http://localhost:4000/api/register/admin/login", { email, password,  });
 
         // ✅ Store Admin Data
         localStorage.setItem("token", response.data.token);
@@ -211,7 +220,8 @@ const Login = () => {
 
       } else {
         // ✅ User Login API Call
-        response = await axios.post("http://localhost:3000/api/register/login", { email, password });
+        response = await axios.post("http://localhost:4000/api/register/login", { email, password,campaignId });
+        console.log(response)
 
         // ✅ Store User Data in LocalStorage
         localStorage.setItem("token", response.data.token);
@@ -229,7 +239,9 @@ const Login = () => {
           localStorage.removeItem("pendingCampaign"); 
           navigate("/donate", { state: { campaign: campaignData } });
         } else {
-          navigate("/UserHome"); // ✅ Default Redirect to User Home
+          console.log(response,'dddddd')
+          console.log(response.data.campaignId, 'heyeyyeyeyeyeyyeyeyeyey')
+          navigate("/UserHome",{state :{id:response.data.campaignId}}); // ✅ Default Redirect to User Home
         }
       }
 

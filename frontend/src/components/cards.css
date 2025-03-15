@@ -1,7 +1,7 @@
 .card-container {
     display: flex;
     flex-wrap: wrap; /* Ensures responsiveness */
-    height: auto; /* Adjusts to content */
+   height: 450px;
     background: white;
     width: 60%;
     margin: 30px auto; /* Centering */
@@ -13,6 +13,7 @@
 /* Left Section: Image */
 .card-image {
     position: relative;
+    object-fit: cover;
     width: 50%;
     overflow: hidden; /* Prevents image overflow */
 }
@@ -28,6 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: normal;
 }
 .card-t{
     margin-left: 10px;
