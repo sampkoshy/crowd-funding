@@ -121,6 +121,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import './userhome.css'
 
 const UserHome = () => {
   const location = useLocation();
@@ -190,9 +191,9 @@ const UserHome = () => {
 
   return (
     <div>
-      <h1>Welcome, {user?.name || "Guest"}</h1>
+      <h1 className="user-home-wel">Welcome, {user?.name || "Guest"}</h1>
 
-      <h2>Your Selected Campaign</h2>
+      <h2 className="user-ce">Your Selected Campaign</h2>
       <div className="campaign-list">
         {campaigns
           .filter((campaign) => campaign._id === data.id) // ✅ Filter to find the correct campaign
@@ -203,6 +204,8 @@ const UserHome = () => {
                 src={campaign.image || "default-image.jpg"}
                 alt="Campaign"
                 width="300px"
+
+                className="user-img"
               />
                <h3>{campaign.title}</h3>
                <p>

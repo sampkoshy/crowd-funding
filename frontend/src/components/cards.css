@@ -74,7 +74,7 @@
     line-height: 1.5;
 }
 
-/* Progress Bar */
+/* Progress Bar
 .card-progress {
     position: relative;
     background: #eee;
@@ -94,7 +94,39 @@
     padding: 3px 8px;
     border-radius: 5px;
     font-size: 14px;
+} */
+ /* Ensure Progress Bar is Styled */
+/* Parent container */
+/* Progress Bar Container */
+.card-progress {
+    position: relative;
+    background: #eee; /* Light gray background */
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+    overflow: hidden;
+    width: 100%;
 }
+
+/* Progress Bar Fill */
+.progress-bar {
+    background: #3bcf93 !important; /* Green color */
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Progress Label */
+.progress-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}
+
 
 /* Funding Info */
 .card-funding {

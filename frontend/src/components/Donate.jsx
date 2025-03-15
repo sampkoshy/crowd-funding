@@ -361,7 +361,7 @@ const Donate = () => {
       if (response.ok) {
         alert(`✅ Payment of $${amount} successful for ${campaign.title}`);
         localStorage.removeItem("selectedCampaign");
-        navigate("/UserHome", { state: { paidCampaign: campaign } });
+        navigate("/Home", { state: { paidCampaign: campaign } });
       } else {
         alert(`❌ Donation failed: ${data.message}`);
       }

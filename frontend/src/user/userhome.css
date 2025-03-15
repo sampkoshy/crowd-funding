@@ -1,0 +1,16 @@
+
+.user-img{
+    object-fit: cover;
+}
+.user-home-wel{
+    color: red;
+    margin-left: 50px;
+    margin-top: 68px;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.user-ce{
+    font-weight: bold;
+    font-size: 35px;
+}

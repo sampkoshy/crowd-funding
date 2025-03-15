@@ -139,5 +139,50 @@ router.get("/all", async (req, res) => {
   }
 });
 
+
+// ✅ Delete Campaign by ID
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedCampaign = await Campaign.findByIdAndDelete(req.params.id);
+
+    if (!deletedCampaign) {
+      return res.status(404).json({ message: "❌ Campaign not found" });
+    }
+
+    res.json({ message: "✅ Campaign deleted successfully!" });
+  } catch (error) {
+    console.error("❌ Error deleting campaign:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+
+//✅ Edit (Update) Campaign by ID
+router.put("/:id", async (req, res) => {
+  try {
+    console.log("🔹 Edit Request Received:", req.params.id, req.body); // Debugging log
+
+    const { title, description, goal, location, image, date } = req.body;
+
+    const updatedCampaign = await Campaign.findByIdAndUpdate(
+      req.params.id,
+      { title, description, goal, location, image, date },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedCampaign) {
+      console.log("❌ Campaign Not Found:", req.params.id);
+      return res.status(404).json({ message: "Campaign not found" });
+    }
+
+    console.log("✅ Campaign Updated:", updatedCampaign);
+    res.json({ message: "Campaign updated successfully!", campaign: updatedCampaign });
+  } catch (error) {
+    console.error("❌ Error updating campaign:", error);
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+
 module.exports = router;
 
