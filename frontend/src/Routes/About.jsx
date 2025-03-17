@@ -1,9 +1,11 @@
 import React from 'react';
 import image21 from '../assets/21.jpg';
+import Footer from '../components/Footer';
 import "./about.css"; // Add a CSS file for styling
 
 const About = () => {
   return (
+    <>
     <div className="about-container">
       {/* Image Section */}
       <div className="about-image">
@@ -49,6 +51,8 @@ const About = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

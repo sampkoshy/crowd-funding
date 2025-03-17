@@ -280,8 +280,9 @@ const Login = () => {
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        <p>
-          Don't have an account? <Link to="/Register">Create an account</Link>
+        <p > 
+          Don't have an account? <Link to="/Register" style={{ textDecoration: "none", color: "inherit" }}>
+          <span className="log-re"> Create an account</span></Link>
         </p>
       </form>
     </div>

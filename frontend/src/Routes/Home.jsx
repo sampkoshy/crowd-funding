@@ -35,6 +35,7 @@
 
 import React, { useEffect, useState } from "react";
 import Section from "../other-components/Section"; // ✅ Ensure correct import
+import Footer from "../components/Footer";
 import axios from "axios";
 import './home.css'
 import Cards from "../components/Cards"; // ✅ Ensure Cards is exported
@@ -66,6 +67,7 @@ const Home = () => {
       ) : (
         <p>No campaigns found.</p>
       )}
+      <Footer/>
     </div>
   );
 };

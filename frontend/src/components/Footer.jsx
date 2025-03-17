@@ -1,30 +1,30 @@
 import React from "react";
-
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import "./footer.css"; // Importing the external CSS file
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A1930] text-white p-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 ">
+    <footer className="footer">
+      <div className="footer-container">
         {/* Logo & About */}
-        <div> 
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            <span className="text-[#3bcf93]"></span>
-            <span>Human Rights</span>
+        <div className="footer-section">
+          <h2 className="footer-logo">
+            <span className="highlight"></span>
+            <span>Charity Life</span>
           </h2>
-          <p className="mt-4 text-gray-400">
+          <p className="footer-text">
             Happen active county. Winding morning am shyness evident to. Garrets because elderly new manners however one village she.
           </p>
-          <div className="mt-4 flex items-center bg-gray-800 p-2 rounded-lg">
-            <input type="email" placeholder="Your Email" className="bg-transparent flex-1 p-2 outline-none" />
-            <button className="bg-[#3bcf93] px-4 py-2 rounded-lg text-black font-bold">Subscribe</button>
+          <div className="subscribe-container">
+            <input type="email" placeholder="Your Email" className="subscribe-input" />
+            <button className="subscribe-button">Subscribe</button>
           </div>
         </div>
-        
+
         {/* Explore */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Explore</h3>
-          <ul className="text-gray-400 space-y-2">
+        <div className="footer-section">
+          <h3 className="footer-title">Explore</h3>
+          <ul className="footer-list">
             <li>Our Causes</li>
             <li>New Campaign</li>
             <li>Site Map</li>
@@ -32,42 +32,42 @@ const Footer = () => {
             <li>Terms</li>
           </ul>
         </div>
-        
+
         {/* Contact Info */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
-          <p className="text-gray-400 flex items-center gap-2">
-            <i className="fas fa-map-marker-alt text-[#3bcf93]"></i> 5919 Trussville Crossings Pkwy, Birmingham AL 35235
+        <div className="footer-section">
+          <h3 className="footer-title">Contact Info</h3>
+          <p className="footer-text">
+            <i className="fas fa-map-marker-alt icon"></i> Thuvayoor south p o adoor
           </p>
-          <p className="text-gray-400 flex items-center gap-2 mt-3">
-            <i className="fas fa-envelope text-[#3bcf93]"></i> info@validtheme.com
+          <p className="footer-text">
+            <i className="fas fa-envelope icon"></i> sampkoshy53@gmail.com
           </p>
-          <p className="text-gray-400 flex items-center gap-2 mt-3">
-            <i className="fas fa-phone text-[#3bcf93]"></i> +123 34598768
+          <p className="footer-text">
+            <i className="fas fa-phone icon"></i> 8078730392
           </p>
         </div>
-        
+
         {/* Latest News */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4">Latest News</h3>
-          <div className="text-gray-400">
+        <div className="footer-section">
+          <h3 className="footer-title">Latest News</h3>
+          <div className="footer-news">
             <p>Delighted prevailed supported too not remainder perpetual.</p>
-            <span className="flex items-center gap-2 mt-2">
-              <i className="fas fa-calendar-alt text-[#3bcf93]"></i> 22 AUG, 2020 - <span className="text-green-400">ADMIN</span>
+            <span className="footer-date">
+              <i className="fas fa-calendar-alt icon"></i> 17 mar 2025- <span className="admin">ADMIN</span>
             </span>
           </div>
-          <div className="text-gray-400 mt-4">
-            <p>Speaking trifling an to unpacked moderate debating learnin management.</p>
-            <span className="flex items-center gap-2 mt-2">
-              <i className="fas fa-calendar-alt text-[#3bcf93]"></i> 15 NOV, 2020 - <span className="text-green-400">USER</span>
+          <div className="footer-news">
+            <p>Speaking trifling an to unpacked moderate debating learning management.</p>
+            <span className="footer-date">
+              <i className="fas fa-calendar-alt icon"></i> 17 mar 2025 - <span className="admin">USER</span>
             </span>
           </div>
         </div>
       </div>
-      
+
       {/* Copyright Section */}
-      <div className="mt-10 text-center text-gray-500 border-t border-gray-600 pt-4">
-        <p>Copyright © 2020. Designed by <span className="text-green-400">validtemplates</span></p>
+      <div className="footer-copyright">
+        <p>Copyright © 2025. Designed by <span className="highlight">SAM P KOSHY</span></p>
       </div>
     </footer>
   );

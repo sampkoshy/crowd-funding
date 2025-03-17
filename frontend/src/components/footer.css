@@ -1,0 +1,123 @@
+/* Footer Container */
+.footer {
+    background: #0A1930;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* Flexbox layout */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-section{
+    align-items: center;
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+}
+/* Logo & About Section */
+.footer-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #3bcf93;
+}
+
+.footer-text {
+    color: #cfcfcf;
+    margin-top: 10px;
+}
+
+/* Subscribe Section */
+.subscribe-container {
+    display: flex;
+    align-items: center;
+    background: #1c2a40;
+    padding: 5px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.subscribe-input {
+    /* flex: 1; */
+    background: transparent;
+    border: none;
+    padding: 10px;
+    color: white;
+    outline: none;
+}
+
+.subscribe-button {
+    background: #3bcf93;
+    color: black;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Footer Titles */
+.footer-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Footer List */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    color: #cfcfcf;
+}
+
+.footer-list li {
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-list li:hover {
+    color: white;
+}
+
+/* Contact & News Section */
+.icon {
+    color: #3bcf93;
+    margin-right: 8px;
+}
+
+.footer-news {
+    margin-top: 10px;
+}
+
+.footer-date {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #cfcfcf;
+}
+
+.admin {
+    color: #3bcf93;
+    font-weight: bold;
+}
+
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #1c2a40;
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #cfcfcf;
+}

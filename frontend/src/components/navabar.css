@@ -28,6 +28,8 @@
     font-weight: bold;
     color: #DAA428;
     transition: 0.3s;
+    text-decoration: none;
+    
     padding: 8px 12px; /* Adjust padding inside each item */
   }
   
@@ -36,7 +38,9 @@
     background: rgba(255, 255, 255, 0.2); /* Optional hover effect */
     border-radius: 5px;
   }
-  
+  .nav-lo{
+    color: #007bff;
+  }
   /* Donate Button */
   .nav-sec2 {
     display: flex;
@@ -56,6 +60,7 @@
   .nav-sec2:hover {
     background: black;
     transform: scale(1.05);
+    text-decoration: none;
   }
   
   .nav-sec2:hover i {

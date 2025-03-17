@@ -16,7 +16,7 @@ const Section = () => {
         </p>
         <div className="donate-container">
           <i className="fa-regular fa-heart"></i>
-        <Link to={'/About'}> <span>Discover More</span></Link> 
+        <Link to={'/About'} style={{ textDecoration: "none", color: "inherit" }}> <span>Discover More</span></Link> 
         </div>
       </section>
     </div>
