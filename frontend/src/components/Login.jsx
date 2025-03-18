@@ -276,7 +276,7 @@ const Login = () => {
           required
         />
 
-        <button type="submit" disabled={loading}>
+        <button type="submit" className="btm" disabled={loading}>
           {loading ? "Logging in..." : "Login"}
         </button>
 

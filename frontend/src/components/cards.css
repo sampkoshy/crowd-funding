@@ -141,7 +141,8 @@
 
 /* Donate Button */
 .donate-button {
-    background: #3bcf93;
+    /* background: #3bcf93; */
+    background: #957ccf;
     width: 100%;
     color: white;
     padding: 12px 24px;
@@ -158,9 +159,9 @@
 }
 
 .donate-button:hover {
-    background: #ffffff; 
-    color: #3bcf93;
-    border: 2px solid #3bcf93;
+    background: white; 
+    color: black;
+    border: 2px solid #957ccf;
     /* Darker shade of green */
 }
 

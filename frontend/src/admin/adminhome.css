@@ -45,7 +45,7 @@
   }
   
   /* ✅ Button Styling */
-  button {
+  .delete-btn button {
     background: #28a745;
     color: #fff;
     border: none;
@@ -58,7 +58,7 @@
     transition: 0.3s;
   }
   
-  button:hover {
+  .delete-btn button:hover {
     background: #218838;
   }
   

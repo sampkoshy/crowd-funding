@@ -231,7 +231,7 @@ const UserHome = () => {
       {selectedCampaign ? (
         <p>✅ Selected Campaign: {selectedCampaign.title}</p>
       ) : (
-        <p>⚠️ No campaign selected. Please select one below.</p>
+        <p> campaign selected.</p>
       )}
 
       <h2>All Available Campaigns</h2>

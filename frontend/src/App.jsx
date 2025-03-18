@@ -10,6 +10,7 @@ import Register from './components/Register';
 import UserHome from './user/UserHome'
 import AdminCreateCampaign from './admin/AdminCreateCampain';
 import AdminHome from './admin/AdminHome';  // ✅ Import AdminHome
+import Carol from './other-components/Carol';
 
 const App = () => {
   const location = useLocation(); // ✅ Get current route
@@ -20,7 +21,7 @@ const App = () => {
   return (
     <div>
       {showNavbar && <Navbar />} {/* ✅ Navbar only shows on non-admin pages */}
-      
+      {/* <Carol/> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/About' element={<About />} />

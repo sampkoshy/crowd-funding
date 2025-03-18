@@ -1,5 +1,5 @@
 import React from "react";
-import cha from '../assets/cha.webp'
+import charity from '../assets/charity.png'
 import { Link } from "react-router-dom";
 
 
@@ -8,17 +8,17 @@ import "./navabar.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar1">
     <Link to='./Home' style={{ textDecoration: "none", color: "inherit" }}>   <div className="nav-sec">
       
-        <img src={cha} alt="charity"  className="nav-img"/>
+        <img src={charity} alt="charity"  className="nav-img"/>
        
       
         </div> </Link>
       <div className="nav-sec1">
         <ul>
           <Link to="/" style={{ textDecoration: "none", color: "inherit" }}><li>Home</li></Link>
-          <li></li>
+          
          
          <Link to='/About' style={{ textDecoration: "none", color: "inherit" }}><li>About</li></Link> 
           <Link to="/Contact" style={{ textDecoration: "none", color: "inherit" }}><li>Contact</li></Link>

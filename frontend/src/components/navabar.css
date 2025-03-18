@@ -1,19 +1,22 @@
 
 
-.navbar {
+.navbar1 {
     display: flex;
-    padding: 10px;
+    
+    padding: 6px;
  
     width: 100%;
-    background-color: aliceblue;
+    /* background-color: #4D55CC; */
+    background: linear-gradient(140deg,white,#4D55CC,rgb(221, 249, 255));
   
     font-family: Arial, Helvetica, sans-serif;
     justify-content: space-around;
     align-items: center;
-    /* padding: 10px 50px; Adjust padding for better spacing */
-    /* background: transparent; 
-    box-shadow: none;
-    z-index: 100; */
+  
+  }
+  .nav-img{
+    width: 100%;
+    height: 43px;
   }
   .nav-sec1 ul {
     list-style: none;
@@ -26,7 +29,7 @@
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    color: #DAA428;
+    color: white;
     transition: 0.3s;
     text-decoration: none;
     
@@ -47,7 +50,8 @@
     align-items: center;
     gap: 8px;
     border-radius: 5px;
-    background: #DAA428;
+    /* color:  linear-gradient(#957ccf#4D55CC,rgb(221, 249, 255)); */
+    background: #957ccf;
     padding: 12px 24px; /* Adjust padding inside */
     color: white;
     font-size: 16px;
@@ -58,7 +62,7 @@
   
   /* Hover Effects */
   .nav-sec2:hover {
-    background: black;
+    /* background: black; */
     transform: scale(1.05);
     text-decoration: none;
   }

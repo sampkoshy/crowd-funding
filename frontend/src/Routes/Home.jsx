@@ -36,6 +36,7 @@
 import React, { useEffect, useState } from "react";
 import Section from "../other-components/Section"; // ✅ Ensure correct import
 import Footer from "../components/Footer";
+import Carol from "../other-components/Carol";
 import axios from "axios";
 import './home.css'
 import Cards from "../components/Cards"; // ✅ Ensure Cards is exported
@@ -60,13 +61,15 @@ const Home = () => {
 
   return (
     <div>
-      <Section /> {/* ✅ Correct component usage */}
+      <Carol/>
+    {/* ✅ Correct component usage */}
       <h1 className="home-camp">All Campaigns</h1>
       {campaigns.length > 0 ? (
         <Cards campaigns={campaigns} /> // ✅ Pass campaigns to Cards component
       ) : (
         <p>No campaigns found.</p>
       )}
+        <Section /> 
       <Footer/>
     </div>
   );
