@@ -1,6 +1,13 @@
 
 .user-img{
     object-fit: cover;
+    
+}
+.user-img img{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .user-home-wel{
     color: red;
@@ -13,4 +20,16 @@
 .user-ce{
     font-weight: bold;
     font-size: 35px;
+}
+.user-paybtn{
+    background: #3bcf93;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
 }

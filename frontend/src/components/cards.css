@@ -1,7 +1,7 @@
 .card-container {
     display: flex;
     flex-wrap: wrap; /* Ensures responsiveness */
-   height: 450px;
+   /* height: 450px; */
     background: white;
     width: 60%;
     margin: 30px auto; /* Centering */

@@ -3,10 +3,10 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import './carol.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import image10 from "../assets/10.jpg";
 import image13 from "../assets/13.jpg";
 import image14 from "../assets/14.jpg";
-import image77 from "../assets/77.jpg";
+// import image77 from "../assets/77.jpg";
 
 const Carol = () => {
   return (
@@ -29,7 +29,7 @@ const Carol = () => {
       </Carousel.Item>
 
       <Carousel.Item >
-        <img className="d-block1 w-100 " src={image77} alt="Third slide" />
+        <img className="d-block1 w-100 " src={image10} alt="Third slide" />
         <Carousel.Caption className="carol-li">
           <h3>"Alone we can do so little; together we can do so much." – Helen Keller</h3>
           <p>🤝 Join hands with us and be the reason someone smiles today!.</p>

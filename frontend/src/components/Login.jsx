@@ -83,7 +83,7 @@ const Login = () => {
         <h2>Login</h2>
         {message && <p className="message">{message}</p>}
 
-        <input
+        <input className="log-in"
           type="email"
           placeholder="Enter your email"
           value={email}
@@ -91,7 +91,7 @@ const Login = () => {
           required
         />
 
-        <input
+        <input className="log-in"
           type="password"
           placeholder="Enter your password"
           value={password}

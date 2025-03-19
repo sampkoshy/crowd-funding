@@ -65,6 +65,17 @@
   justify-content: center;
   align-items: center;
 }
+.cancel-button{
+  margin-top: 15px;
+padding: 10px;
+background-color: red;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+cursor: pointer;
+transition: 0.3s;
+}
 .submit-button:hover {
   background-color: #218838;
 }

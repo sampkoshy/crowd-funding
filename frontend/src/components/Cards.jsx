@@ -29,24 +29,6 @@ const Cards = ({ campaigns }) => {
       return;
     }
 
-    // 🟢 Check if user is logged in
-    // if (!user) {
-    //   // toast("Please log in to donate.");
-    //   toast.warn("⚠️ Please log in to donate.");
-    //   toast.warn("⚠️ Please log in to donate.", {
-    //     position: "top-right",
-    //     autoClose: 3000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //     progress: undefined,
-    //     theme: "light",
-    //   });
-    //   alert("Please log in to donate.");
-    //   navigate(`/Login?id=${campaign._id}`);
-    //   return;
-    // }
     if (!user) {
       console.log("User is not logged in!");
       

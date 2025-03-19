@@ -66,6 +66,7 @@ const Home = () => {
    <div>
     <Carol/>
     {/* ✅ Correct component usage */}
+    
    <h1 className="home-camp">All Campaigns</h1>
    <div className="home-card">
    {campaigns.length > 0 ? (
