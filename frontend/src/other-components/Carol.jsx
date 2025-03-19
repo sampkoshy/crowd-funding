@@ -2,7 +2,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import './carol.css'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import image13 from "../assets/13.jpg";
 import image14 from "../assets/14.jpg";

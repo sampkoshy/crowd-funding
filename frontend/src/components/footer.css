@@ -1,7 +1,7 @@
 /* Footer Container */
 .footer {
-    /* background: #0A1930; */
-    background: linear-gradient(120deg,white,#4D55CC,rgb(133, 186, 198));
+    background: #0A1930;
+    /* background: linear-gradient(140deg,#6ec6e3,#2ef3cc,rgb(125, 219, 207)); */
     color: white;
     padding: 40px 20px;
 }
@@ -29,12 +29,11 @@
 }
 
 .highlight {
-    color: rgb(89, 191, 213);
+    color: #3bcf93;
 }
 
 .footer-text {
-    /* color: #cfcfcf; */
-    color: rgb(153, 89, 213);
+    color: #cfcfcf;
     margin-top: 10px;
 }
 
@@ -58,7 +57,7 @@
 }
 
 .subscribe-button {
-    background:#957ccf ;
+    background: #3bcf93;
     color: black;
     font-weight: bold;
     padding: 10px 15px;
@@ -93,7 +92,7 @@
 
 /* Contact & News Section */
 .icon {
-    color: black;
+    color: #3bcf93;
     margin-right: 8px;
 }
 
@@ -110,7 +109,7 @@
 }
 
 .admin {
-    color: #6c3bcf;
+    color: #3bcf93;
     font-weight: bold;
 }
 

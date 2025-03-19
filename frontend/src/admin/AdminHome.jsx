@@ -353,42 +353,136 @@ const AdminHome = () => {
   };
 
   return (
-    <div className="admin-home-container">
-      <div className="adm">
-        <Link to="/Login">
-          <span>Login</span>
-        </Link>
-        <Link to="/Home">
-          <span>Home</span>
-        </Link>
-      </div>
+//     <div className="admin-home-container">
+//       <div className="adm">
+//         <Link to="/Login">
+//           <span>Login</span>
+//         </Link>
+//         <Link to="/Home">
+//           <span>Home</span>
+//         </Link>
+//       </div>
 
-      <div className="ad-head">
-        <h2>Welcome, Admin!</h2>
-      </div>
-      <p>Manage campaigns and view contact messages.</p>
+//       <div className="ad-head">
+//         <h2>Welcome, Admin!</h2>
+//       </div>
+//       <p>Manage campaigns and view contact messages.</p>
 
-      {/* Button to create a new campaign */}
-      <button onClick={() => {
-        setShowCreateForm(!showCreateForm);
-        setEditCampaign(null);
-        console.log("🆕 Create button clicked. Opening form:", !showCreateForm);
-      }}>
-        {showCreateForm ? "Close Form" : "Create a Campaign"}
-      </button>
+//       {/* Button to create a new campaign */}
+//       <button onClick={() => {
+//         setShowCreateForm(!showCreateForm);
+//         setEditCampaign(null);
+//         console.log("🆕 Create button clicked. Opening form:", !showCreateForm);
+//       }}>
+//         {showCreateForm ? "Close Form" : "Create a Campaign"}
+//       </button>
 
-      {/* Button to toggle campaign list */}
-      <button onClick={() => setOpenCampaign(!opencampaign)}>
-        {opencampaign ? "Hide Ongoing Campaigns" : "Show Ongoing Campaigns"}
-      </button>
+//       {/* Button to toggle campaign list */}
+//       <button onClick={() => setOpenCampaign(!opencampaign)}>
+//         {opencampaign ? "Hide Ongoing Campaigns" : "Show Ongoing Campaigns"}
+//       </button>
 
-      {/* ✅ Show campaign form for creating or editing */}
-      {showCreateForm && (
-  <div className="overlay">
-    <div className="modal">
-      <AdminCreateCampaign 
-        campaign={editCampaign} 
-        refreshCampaigns={fetchCampaigns} 
+//       {/* ✅ Show campaign form for creating or editing */}
+//       {showCreateForm && (
+//   <div className="overlay">
+//     <div className="modal">
+//       <AdminCreateCampaign 
+//         campaign={editCampaign} 
+//         refreshCampaigns={fetchCampaigns} 
+//         closeForm={() => {
+//           setShowCreateForm(false);
+//           setEditCampaign(null);
+//           console.log("❌ Form closed.");
+//         }}
+//       />
+//     </div>
+//   </div>
+// )}
+
+
+//       {/* ✅ Show ongoing campaigns if opencampaign is true */}
+//       {opencampaign && (
+//         <>
+//           <h2 className="ad-camp">Ongoing Campaigns</h2>
+//           <div className="campaign-list">
+//             {campaigns.length > 0 ? (
+//               campaigns.map((campaign) => (
+//                 <div key={campaign._id} className="campaign-card">
+//                   <Cards campaigns={[campaign]} />
+//                   <button className="delete-btn" onClick={() => handleDeleteCampaign(campaign._id)}>
+//                     Delete
+//                   </button>
+//                   <button className="edit-btn" onClick={() => handleEditCampaign(campaign)}>
+//                     Edit
+//                   </button>
+//                 </div>
+//               ))
+//             ) : (
+//               <p>No campaigns found.</p>
+//             )}
+//           </div>
+//         </>
+//       )}
+
+//       {/* Contact Messages Section */}
+//       <h2 className="ad-camp">Contact Messages</h2>
+//       <div className="contact-messages">
+//         {contactMessages.length > 0 ? (
+//           contactMessages.map((msg) => (
+//             <div key={msg._id} className="message-card">
+//               <h3>Name: {msg.name}</h3>
+//               <p>Email: {msg.email}</p>
+//               <p>Phone: {msg.phone}</p>
+//               <p>Message: {msg.message}</p>
+//             </div>
+//           ))
+//         ) : (
+//           <p>No contact messages found.</p>
+//         )}
+//       </div>
+//     </div>
+
+<div className="admin-home-container">
+<div className="adm">
+  <Link to="/Login">
+    <span>Login</span>
+  </Link>
+  <Link to="/Home">
+    <span>Home</span>
+  </Link>
+</div>
+
+<div className="ad-head">
+  <h2>Welcome, Admin!</h2>
+</div>
+<p>Manage campaigns and view contact messages.</p>
+
+{/* Button to create a new campaign */}
+<div className="admin-btn">
+  <button
+    onClick={() => {
+      setShowCreateForm(!showCreateForm);
+      setEditCampaign(null);
+      console.log("🆕 Create button clicked. Opening form:", !showCreateForm);
+    }}
+    className="create-camp"
+  >
+    {showCreateForm ? "Close Form" : "Create a Campaign"}
+  </button>
+
+  {/* Button to toggle campaign list */}
+  <button onClick={() => setOpenCampaign(!opencampaign)} className="create-camp">
+    {opencampaign ? "Hide Ongoing Campaigns" : "Show Ongoing Campaigns"}
+  </button>
+</div>
+
+{/* ✅ Show campaign form for creating or editing */}
+{showCreateForm && (
+  <div className="overlay1">
+    <div className="modal1">
+      <AdminCreateCampaign
+        campaign={editCampaign}
+        refreshCampaigns={fetchCampaigns}
         closeForm={() => {
           setShowCreateForm(false);
           setEditCampaign(null);
@@ -399,48 +493,49 @@ const AdminHome = () => {
   </div>
 )}
 
-
-      {/* ✅ Show ongoing campaigns if opencampaign is true */}
-      {opencampaign && (
-        <>
-          <h2 className="ad-camp">Ongoing Campaigns</h2>
-          <div className="campaign-list">
-            {campaigns.length > 0 ? (
-              campaigns.map((campaign) => (
-                <div key={campaign._id} className="campaign-card">
-                  <Cards campaigns={[campaign]} />
-                  <button className="delete-btn" onClick={() => handleDeleteCampaign(campaign._id)}>
-                    Delete
-                  </button>
-                  <button className="edit-btn" onClick={() => handleEditCampaign(campaign)}>
-                    Edit
-                  </button>
-                </div>
-              ))
-            ) : (
-              <p>No campaigns found.</p>
-            )}
-          </div>
-        </>
-      )}
-
-      {/* Contact Messages Section */}
-      <h2 className="ad-camp">Contact Messages</h2>
-      <div className="contact-messages">
-        {contactMessages.length > 0 ? (
-          contactMessages.map((msg) => (
-            <div key={msg._id} className="message-card">
-              <h3>Name: {msg.name}</h3>
-              <p>Email: {msg.email}</p>
-              <p>Phone: {msg.phone}</p>
-              <p>Message: {msg.message}</p>
+{/* ✅ Show ongoing campaigns if opencampaign is true */}
+{opencampaign && (
+  <>
+    <h2 className="ad-camp">Ongoing Campaigns</h2>
+    <div className="campaign-list">
+      {campaigns.length > 0 ? (
+        campaigns.map((campaign) => (
+          <div key={campaign._id} className="campaign-card">
+            <Cards campaigns={[campaign]} />
+            <div className="ad-we">
+            <button className="delete-btn" onClick={() => handleDeleteCampaign(campaign._id)}>
+              Delete
+            </button>
+            <button className="edit-btn" onClick={() => handleEditCampaign(campaign)}>
+              Edit
+            </button>
             </div>
-          ))
-        ) : (
-          <p>No contact messages found.</p>
-        )}
-      </div>
+          </div>
+        ))
+      ) : (
+        <p>No campaigns found.</p>
+      )}
     </div>
+  </>
+)}
+
+{/* Contact Messages Section */}
+<h2 className="ad-camp">Contact Messages</h2>
+<div className="contact-messages">
+  {contactMessages.length > 0 ? (
+    contactMessages.map((msg) => (
+      <div key={msg._id} className="message-card">
+        <h3>Name: {msg.name}</h3>
+        <p>Email: {msg.email}</p>
+        <p>Phone: {msg.phone}</p>
+        <p>Message: {msg.message}</p>
+      </div>
+    ))
+  ) : (
+    <p>No contact messages found.</p>
+  )}
+</div>
+</div>
   );
 };
 

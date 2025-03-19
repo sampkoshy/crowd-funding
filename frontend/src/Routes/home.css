@@ -4,4 +4,16 @@
     text-transform: uppercase;
     font-size: larger;
     margin: 20px;
+  
+    border-radius: 10px;
+    /* width: 168px; */
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(140deg,#B3C8CF,#f3cf2e,rgb(221, 249, 255));
+
+}
+.home-card{
+    /* background-color: #c1b7e9; */
+    padding: 30px;
+    background: linear-gradient(140deg,white,#4D55CC,rgb(221, 249, 255));
 }

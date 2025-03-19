@@ -33,13 +33,16 @@
 
 // export default Home;
 
-import React, { useEffect, useState } from "react";
-import Section from "../other-components/Section"; // ✅ Ensure correct import
-import Footer from "../components/Footer";
-import Carol from "../other-components/Carol";
-import axios from "axios";
-import './home.css'
-import Cards from "../components/Cards"; // ✅ Ensure Cards is exported
+ // ✅ Ensure Cards is exported
+
+
+ import React, { useEffect, useState } from "react";
+ import Section from "../other-components/Section"; // ✅ Ensure correct import
+ import Footer from "../components/Footer";
+ import axios from "axios";
+ import Carol from "../other-components/Carol";
+ import './home.css'
+ import Cards from "../components/Cards";
 
 const Home = () => {
   const [campaigns, setCampaigns] = useState([]);
@@ -60,18 +63,21 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <Carol/>
+   <div>
+    <Carol/>
     {/* ✅ Correct component usage */}
-      <h1 className="home-camp">All Campaigns</h1>
-      {campaigns.length > 0 ? (
-        <Cards campaigns={campaigns} /> // ✅ Pass campaigns to Cards component
-      ) : (
-        <p>No campaigns found.</p>
-      )}
-        <Section /> 
-      <Footer/>
-    </div>
+   <h1 className="home-camp">All Campaigns</h1>
+   <div className="home-card">
+   {campaigns.length > 0 ? (
+     <Cards campaigns={campaigns} /> // ✅ Pass campaigns to Cards component
+   ) : (
+     <p>No campaigns found.</p>
+   )}
+   </div>
+   <Section />
+   <Footer/>
+ </div>
+
   );
 };
 

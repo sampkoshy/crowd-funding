@@ -1,73 +1,81 @@
 .admin-campaign-container {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .campaign-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    text-align: left;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #555;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-  
-  textarea {
-    resize: vertical;
-    height: 80px;
-  }
-  
-  input[type="file"] {
-    border: none;
-  }
-  
-  .submit-button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .submit-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Progress input style */
-  input[type="number"] {
-    appearance: textfield;
-  }
-  
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    appearance: none;
-    margin: 0;
-  }
-  
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.camp-h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.campaign-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.camp-label {
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #555;
+}
+.camp-form {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.cmap-txt {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  resize: vertical;
+  height: 80px;
+}
+
+.camp-form[type="file"] {
+  border: none;
+}
+
+.submit-button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.ad-we{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Progress input style */
+.camp-form [type="number"] {
+  appearance: textfield;
+}
+
+.camp-form [type="number"]::-webkit-inner-spin-button,
+.camp-form [type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}

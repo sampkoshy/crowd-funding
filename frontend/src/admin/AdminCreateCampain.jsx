@@ -183,35 +183,66 @@ const AdminCreateCampaign = ({ campaign, refreshCampaigns, closeForm }) => {
   };
 
   return (
-    <div className="admin-campaign-container">
-      <h2>{isEditing ? "Edit Campaign" : "Create a New Campaign"}</h2>
-      {message && <p className="message">{message}</p>}
+  //   <div className="admin-campaign-container">
+  //     <h2>{isEditing ? "Edit Campaign" : "Create a New Campaign"}</h2>
+  //     {message && <p className="message">{message}</p>}
       
-      <form onSubmit={handleSubmit} className="campaign-form">
-        <label>Title</label>
-        <input type="text" name="title" value={formData.title} onChange={handleChange} required />
+  //     <form onSubmit={handleSubmit} className="campaign-form">
+  //       <label>Title</label>
+  //       <input type="text" name="title" value={formData.title} onChange={handleChange} required />
 
-        <label>Description</label>
-        <textarea name="description" value={formData.description} onChange={handleChange} required />
+  //       <label>Description</label>
+  //       <textarea name="description" value={formData.description} onChange={handleChange} required />
 
-        <label>Goal Amount ($)</label>
-        <input type="number" name="goal" value={formData.goal} onChange={handleChange} required />
+  //       <label>Goal Amount ($)</label>
+  //       <input type="number" name="goal" value={formData.goal} onChange={handleChange} required />
 
-        <label>Location</label>
-        <input type="text" name="location" value={formData.location} onChange={handleChange} required />
+  //       <label>Location</label>
+  //       <input type="text" name="location" value={formData.location} onChange={handleChange} required />
 
-        <label>Image URL</label>
-        <input type="url" name="image" value={formData.image} onChange={handleChange} required />
+  //       <label>Image URL</label>
+  //       <input type="url" name="image" value={formData.image} onChange={handleChange} required />
 
-        <label>Date</label>
-        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+  //       <label>Date</label>
+  //       <input type="date" name="date" value={formData.date} onChange={handleChange} required />
 
-        <button type="submit" className="submit-button">
-          {isEditing ? "Update Campaign" : "Create Campaign"}
-        </button>
-        <button type="button" className="cancel-button" onClick={closeForm}>Cancel</button>
-      </form>
-    </div>
+  //       <button type="submit" className="submit-button">
+  //         {isEditing ? "Update Campaign" : "Create Campaign"}
+  //       </button>
+  //       <button type="button" className="cancel-button" onClick={closeForm}>Cancel</button>
+  //     </form>
+  //   </div>
+
+  
+  <div className="admin-campaign-container">
+  <h2 className="camp-h2">{isEditing ? "Edit Campaign" : "Create a New Campaign"}</h2>
+  {message && <p className="message">{message}</p>}
+  
+  <form onSubmit={handleSubmit} className="campaign-form">
+    <label className="camp-label">Title</label>
+    <input type="text" name="title" value={formData.title} onChange={handleChange} required  className="camp-form"/>
+
+    <label  className="camp-label">Description</label>
+    <textarea name="description" value={formData.description} onChange={handleChange} required  className="camp-text"/>
+
+    <label  className="camp-label">Goal Amount (  $)</label>
+    <input type="number" name="goal" value={formData.goal} onChange={handleChange} required className="camp-form" />
+
+    <label  className="camp-label">Location</label>
+    <input type="text" name="location" value={formData.location} onChange={handleChange} required  className="camp-form"/>
+
+    <label  className="camp-label">Image URL</label>
+    <input type="url" name="image" value={formData.image} onChange={handleChange} required className="camp-form" />
+
+    <label  className="camp-label">Date</label>
+    <input type="date" name="date" value={formData.date} onChange={handleChange} required className="camp-form"/>
+
+    <button type="submit" className="submit-button">
+      {isEditing ? "Update Campaign" : "Create Campaign"}
+    </button>
+    <button type="button" className="cancel-button" onClick={closeForm}>Cancel</button>
+  </form>
+</div>
   );
 };
 
